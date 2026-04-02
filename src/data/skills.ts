@@ -7,11 +7,11 @@ export interface Skill {
 export const skills: Skill[] = [
   {
     category: '后端开发',
-    items: ['PHP', 'YII2', 'ThinkPHP 5', 'Laravel', 'CI', 'Phalcon', 'Swoole', 'Java'],
+    items: ['AI', 'OpenClaw', 'PHP', 'Java', 'YII2', 'ThinkPHP', 'Laravel', 'CI', 'Phalcon', 'Swoole'],
   },
   {
     category: '前端开发',
-    items: ['Vue.js', 'JavaScript', 'jQuery', 'Ajax', 'HTML5', 'CSS3', 'DIV+CSS'],
+    items: ['Vue.js', 'Node.js', 'React', 'TypeScript', 'Vite', 'TailwindCSS'],
   },
   {
     category: '数据库 & 缓存',

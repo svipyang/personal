@@ -136,8 +136,8 @@ export default function Projects() {
                     {project.name}
                   </h3>
 
-                  {/* 项目描述 */}
-                  <p className="text-white/55 text-sm mb-4 leading-relaxed line-clamp-3">
+                  {/* 项目描述：高度自适应，完整显示 */}
+                  <p className="text-white/55 text-sm mb-4 leading-relaxed">
                     {project.description}
                   </p>
 

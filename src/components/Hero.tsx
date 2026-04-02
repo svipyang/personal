@@ -1,8 +1,8 @@
-// Hero 组件：首页核心展示区域（已根据简历填充真实信息）
+// Hero 组件：居中布局 + 真实头像照片
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-// 打字机效果文字列表（来自简历技能）
+// 打字机效果候选文字
 const ROLES = [
   'PHP 高级工程师',
   '全栈技术主管',
@@ -57,21 +57,28 @@ export default function Hero() {
         />
       </div>
 
-      {/* ── 主内容区 ── */}
+      {/* ── 主内容区（居中） ── */}
       <div className="relative z-10 max-w-4xl mx-auto">
 
-        {/* 头像 */}
+        {/* 头像：真实照片圆形裁剪 */}
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.1, type: 'spring', stiffness: 120 }}
           className="mx-auto mb-8 relative w-28 h-28 md:w-36 md:h-36"
         >
+          {/* 外圈渐变光环 */}
           <div className="absolute inset-0 rounded-full gradient-bg opacity-80 blur-sm scale-110 animate-pulse" />
-          <div className="relative w-full h-full rounded-full gradient-bg flex items-center justify-center text-5xl md:text-6xl shadow-2xl border-2 border-white/20">
-            👨‍💻
+          {/* 照片 */}
+          <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/20 shadow-2xl">
+            <img
+              src="/avatar.jpg"
+              alt="杨永坚"
+              className="w-full h-full object-cover object-top"
+              loading="eager"
+            />
           </div>
-          {/* 在线状态绿点 */}
+          {/* 在线绿点 */}
           <span className="absolute bottom-1 right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-[#0a0a0a] shadow-lg shadow-green-400/50" />
         </motion.div>
 
@@ -86,7 +93,7 @@ export default function Hero() {
           欢迎来到我的作品集 · 广州
         </motion.div>
 
-        {/* 大标题：真实姓名 */}
+        {/* 大标题 */}
         <motion.h1
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -109,7 +116,7 @@ export default function Hero() {
           <span className="ml-0.5 inline-block w-0.5 h-7 gradient-bg animate-pulse" />
         </motion.div>
 
-        {/* 个人简介：真实背景 */}
+        {/* 个人简介 */}
         <motion.p
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -121,7 +128,7 @@ export default function Hero() {
           热衷于高并发系统优化与带领团队攻克复杂技术难题。
         </motion.p>
 
-        {/* CTA 按钮 */}
+        {/* CTA 按钮组 */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -153,7 +160,6 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
-            className="text-lg"
           >
             ↓
           </motion.div>
